@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Home from "./pages/js/Home";
-import Navigation from "./pages/js/Navigation";
+import Home from "./components/home/Home.js";
+import Navigation from "./components/navbar/Navigation";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
