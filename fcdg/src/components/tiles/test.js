@@ -3,59 +3,58 @@ import ReactDOM from "react-dom";
 import './Tiles.css';
 import Card from 'react-bootstrap/Card'
 import { Col, Row} from "react-bootstrap";
+import CardGroup from 'react-bootstrap/CardGroup'
 
 function Test(){
     return (
 <div>
-    <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://c.tenor.com/hpyQ-qg72MEAAAAM/mocking-chicken.gif" />
-        <Card.Body>
-            <Card.Title class="title">Card Title</Card.Title>
-            <Card.Text class="description">
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-            </Card.Text>
-        </Card.Body>
-    </Card>
+<CardGroup>
+  <Card class="card">
+    <Card.Img class="image" variant="top" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" />
+    <Card.Body>
+      <Card.Title class="title">Card title</Card.Title>
+      <Card.Text class="description">
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+  <Card class="card">
+    <Card.Img class="image" variant="top" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWF8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" />
+    <Card.Body>
+      <Card.Title class="title">Card title</Card.Title>
+      <Card.Text class="description">
+        This card has supporting text below as a natural lead-in to additional
+        content.{' '}
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+  <Card class="card">
+    <Card.Img class="image" variant="top" src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg" />
+    <Card.Body>
+      <Card.Title class="title">Card title</Card.Title>
+      <Card.Text class="description">
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This card has even longer content than the first to
+        show that equal height action.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+</CardGroup>
 
-    <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://img.memecdn.com/charizard-y-u-no-listen_fb_569232.jpg" />
-        <Card.Body>
-            <Card.Title class="title">Card Title</Card.Title>
-            <Card.Text class="description">
-I wanna be the very best
-Like no one ever was
-To catch them is my real test
-To train them is my cause
-I will travel across the land
-Searching far and wide
-Teach Pokémon to understand
-The power that's inside.🎃
-            </Card.Text>
-        </Card.Body>
-    </Card>
 
-    <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://instoremag.com/wp-content/uploads/2020/01/doing-a-bit-of-everything-photo-u1.jpg" />
-        <Card.Body>
-            <Card.Title class="title">Card Title</Card.Title>
-            <Card.Text class="description">
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-            </Card.Text>
-        </Card.Body>
-    </Card>
-    <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://keyhole.co/wp-content/uploads/2019/11/3fdkbz.gif" />
-        <Card.Body>
-            <Card.Title class="title">Card Title</Card.Title>
-            <Card.Text class="description">
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-            </Card.Text>
-        </Card.Body>
-    </Card>
 </div>
+
+
 
     )
 }
