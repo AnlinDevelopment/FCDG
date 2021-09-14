@@ -27,9 +27,9 @@ function Navigation() {
               Switch Theme
             </Button>
             <Container>
-              <Navbar.Brand href="#home">FCDG</Navbar.Brand>
+              <Navbar.Brand href="/">FCDG</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link href="#admin">Admin</Nav.Link>
+                <Nav.Link href="/admin">Admin</Nav.Link>
               </Nav>
             </Container>
           </Nav>
