@@ -4,21 +4,31 @@ import "./index.css";
 import Home from "./components/home/Home.js";
 import Navigation from "./components/navbar/Navigation";
 import reportWebVitals from "./reportWebVitals";
-import Test from "./components/tiles/test"
+import Test from "./components/tiles/test";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Admin from "./components/admin/Admin";
+
 // import Tile from "./components/tiles/Tiles";
-
-
-
-
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navigation />
-    <body>
-      <Home/>
-    </body>
-    <Test/>
-
+    <Router>
+      <div className="App">
+        <Navigation />
+        <div className="content">
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+              <Test />
+            </Route>
+            <Route path="/admin">
+              <Admin />
+              <Test />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
