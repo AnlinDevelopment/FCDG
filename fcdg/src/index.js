@@ -1,24 +1,15 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Home from "./components/home/Home.js";
-import Navigation from "./components/navbar/Navigation";
 import reportWebVitals from "./reportWebVitals";
-import Test from "./components/tiles/test"
-// import Tile from "./components/tiles/Tiles";
-
-
-
+import Home from "./components/home/Home";
+import Test from "./components/tiles/test";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navigation />
-    <body>
-      <Home/>
-    </body>
+    <Home />
     <Test/>
-
   </React.StrictMode>,
   document.getElementById("root")
 );
