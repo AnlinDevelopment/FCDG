@@ -8,6 +8,9 @@ import Admin from "./components/admin/Admin";
 import Navigation from "./components/navbar/Navigation"
 import Home from "./components/home/Home"
 
+
+import Tile from './components/tiles/Tile';
+
 // import Tile from "./components/tiles/Tiles";
 
 ReactDOM.render(
@@ -19,7 +22,8 @@ ReactDOM.render(
           <Switch>
             <Route path="/" exact>
               <Home />
-              <Test />
+              {/* <Test /> */}
+              <Tile />
             </Route>
             <Route path="/admin">
               <Admin />
