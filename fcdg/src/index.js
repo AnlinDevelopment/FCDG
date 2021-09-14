@@ -5,6 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import Test from "./components/tiles/test";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Admin from "./components/admin/Admin";
+import Navigation from "./components/navbar/Navigation";
+import Home from "./components/home/Home";
 
 // import Tile from "./components/tiles/Tiles";
 
