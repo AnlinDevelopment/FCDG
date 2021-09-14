@@ -24,10 +24,11 @@ ReactDOM.render(
               <Home />
               {/* <Test /> */}
               <Tile />
+              <Tile />
+              <Tile />
             </Route>
             <Route path="/admin">
               <Admin />
-              <Test />
             </Route>
           </Switch>
         </div>

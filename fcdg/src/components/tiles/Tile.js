@@ -10,24 +10,30 @@ import Typography from "@material-ui/core/Typography";
 import Container from '@material-ui/core/Container';
 
 import Img from '../../assets/img/etc/reptile.jpg';
-import Img0 from '../../assets/img/etc/I1.jpg';
+// import Img from '../../assets/img/etc/I1.jpg';
 
-var Img2 = 'https://i.kym-cdn.com/photos/images/newsfeed/000/804/850/999.gif'
+// var Img = 'https://i.kym-cdn.com/photos/images/newsfeed/000/804/850/999.gif'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345
+    maxWidth: 345,
+    flexGrow: 1,
   },
   media: {
     height: 140
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   }
-});
+}));
 
 export default function MediaCard() {
   const classes = useStyles();
-
+  
   return (
-<Container>    
+<Container style={{ padding:15 }}>
   <Card className={classes.root}>
     <CardActionArea>
       <CardMedia className={classes.media} image={Img} title="Contemplative Reptile"/>
