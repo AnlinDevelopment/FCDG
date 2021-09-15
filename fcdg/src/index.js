@@ -10,6 +10,7 @@ import Home from "./components/home/Home"
 
 
 import Tile from './components/tiles/Tile';
+import Tiles from './components/tiles/Tiles';
 
 // import Tile from "./components/tiles/Tiles";
 
@@ -23,9 +24,9 @@ ReactDOM.render(
             <Route path="/" exact>
               <Home />
               {/* <Test /> */}
-              <Tile />
-              <Tile />
-              <Tile />
+              <Tiles/>
+              <Tiles/>
+              <Tiles/>
             </Route>
             <Route path="/admin">
               <Admin />

@@ -57,6 +57,5 @@ export default function MediaCard() {
       </CardActions>
     </Card>
     </Container>    
-
   );
 }
