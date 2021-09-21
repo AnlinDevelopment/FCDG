@@ -9,13 +9,13 @@ import Typography from "@material-ui/core/Typography";
 import "./Tile.css";
 
 
-function clicked() {
-  alert("hello");
+function clicked(name) {
+    alert(`You clicked ${name}!`);
 }
 
 export default function Tile(props) {
     return (
-        <Card className="card" onClick={clicked}>
+        <Card className="card" onClick={() =>clicked(`${props.title}`)}>
             <CardActionArea>
                 <CardMedia
                     component="img"
