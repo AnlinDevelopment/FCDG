@@ -1,13 +1,22 @@
 import "./Admin.css";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+// import { response } from "express";
 
 function Admin() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userInfo, setuserInfo] = useState("");
+  const [DBusers, setDBusers] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/get/user").then((response) => {
+      console.log("Front End User Data: ", response.data);
+      setDBusers(response.data);
+    });
+  });
 
   //function to create a new user and submit it to the database.
   //These variables pass to server/index.js to the post cmd
@@ -19,6 +28,12 @@ function Admin() {
       BEpassword: password,
     }).then(() => {
       alert("Successful Insert");
+    });
+  };
+
+  const submitGetUser = () => {
+    Axios.post("http://localhost:3001/api/get/user", {}).then(() => {
+      alert("Data has been returned!");
     });
   };
 
@@ -60,6 +75,19 @@ function Admin() {
         />
 
         <button onClick={submitNewUser}>Submit</button>
+      </div>
+      <div className="right">
+        ---List Of Users---
+        {DBusers.map((val) => {
+          return (
+            <p className="userEntries">
+              First Name: {val.FirstName} <br></br>
+              Last Name: {val.LastName} <br></br>
+              Email: {val.Email} <br></br>
+              Password: {val.password} <br></br>
+            </p>
+          );
+        })}
       </div>
     </div>
   );
