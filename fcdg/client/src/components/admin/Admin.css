@@ -21,7 +21,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: right;
-  border: 1px solid red;
 }
 
 .userEntries {
@@ -31,4 +30,8 @@
   text-align: left;
   justify-content: left;
   border: 1px solid blue;
+}
+
+.tableLayout {
+  table-layout: fixed;
 }
