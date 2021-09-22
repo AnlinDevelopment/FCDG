@@ -10,6 +10,8 @@ function Admin() {
   const [password, setPassword] = useState("");
   const [userInfo, setuserInfo] = useState("");
   const [DBusers, setDBusers] = useState([]);
+  const [emailErr, setEmailErr] = useState(false);
+  const [pwdError, setPwdError] = useState(false);
 
   useEffect(() => {
     Axios.get("http://localhost:3001/api/get/user").then((response) => {
@@ -17,6 +19,48 @@ function Admin() {
       setDBusers(response.data);
     });
   });
+
+  const validEmail = new RegExp(
+    "^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$"
+  );
+
+  const validPassword = new RegExp("^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$");
+
+  let isValid;
+
+  const checkEmail = (isValid) => {
+    if (!validEmail.test(email)) {
+      setEmailErr(true);
+      isValid = false;
+    }
+    if (validEmail.test(email)) {
+      setEmailErr(false);
+      isValid = true;
+    }
+    return isValid;
+  };
+
+  const checkPassword = (isValid) => {
+    if (!validPassword.test(password)) {
+      setPwdError(true);
+      isValid = false;
+    }
+
+    if (validPassword.test(password)) {
+      setPwdError(false);
+      isValid = true;
+    }
+    return isValid;
+  };
+
+  const validate = () => {
+    isValid = checkEmail(isValid);
+    isValid = checkPassword(isValid);
+
+    if (isValid) {
+      submitNewUser();
+    }
+  };
 
   //function to create a new user and submit it to the database.
   //These variables pass to server/index.js to the post cmd
@@ -28,12 +72,6 @@ function Admin() {
       BEpassword: password,
     }).then(() => {
       alert("Successful Insert");
-    });
-  };
-
-  const submitGetUser = () => {
-    Axios.post("http://localhost:3001/api/get/user", {}).then(() => {
-      alert("Data has been returned!");
     });
   };
 
@@ -61,6 +99,7 @@ function Admin() {
         <input
           type="text"
           name="Email"
+          value={email}
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -69,12 +108,15 @@ function Admin() {
         <input
           type="text"
           name="Password"
+          value={password}
           onChange={(e) => {
             setPassword(e.target.value);
           }}
         />
 
-        <button onClick={submitNewUser}>Submit</button>
+        <button onClick={validate}>Submit</button>
+        {emailErr && <p>Your email is invalid</p>}
+        {pwdError && <p>Your password is invalid</p>}
       </div>
       <div className="right">
         ---List Of Users---

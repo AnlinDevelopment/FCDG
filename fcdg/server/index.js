@@ -3,7 +3,6 @@ const app = express();
 const mariadb = require("mariadb");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { query } = require("express");
 const mysql = require("mysql");
 
 //create the database connection to be used later to query the databse.
@@ -35,7 +34,6 @@ app.get("/api/get/user", (req, res) => {
   const sqlSelect = "SELECT * FROM fcdg.`security`;";
 
   mydb.query(sqlSelect, (err, result) => {
-    result.map();
     res.send(result);
   });
 });
