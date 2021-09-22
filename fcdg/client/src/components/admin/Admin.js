@@ -1,7 +1,7 @@
 import "./Admin.css";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-// import { response } from "express";
+import { table } from "bootstrap";
 
 function Admin() {
   const [firstName, setFirstName] = useState("");
@@ -78,14 +78,67 @@ function Admin() {
       </div>
       <div className="right">
         ---List Of Users---
-        {DBusers.map((val) => {
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col" className="bg-success col-sm-1">
+                ID
+              </th>
+              <th scope="col" className="bg-success col-sm-1">
+                First Name
+              </th>
+              <th scope="col" className="bg-success col-sm-1">
+                Last Name
+              </th>
+              <th scope="col" className="bg-success col-sm-1">
+                Password
+              </th>
+              <th scope="col" className="bg-success col-sm-1">
+                Email
+              </th>
+            </tr>
+          </thead>
+        </table>
+        {DBusers.map((val, index) => {
           return (
-            <p className="userEntries">
-              First Name: {val.FirstName} <br></br>
-              Last Name: {val.LastName} <br></br>
-              Email: {val.Email} <br></br>
-              Password: {val.password} <br></br>
-            </p>
+            <div className="table">
+              <table className="table tableLayout">
+                <tbody>
+                  <tr>
+                    <th
+                      scope="row"
+                      className="bg-primary text-center border col-sm-1"
+                    >
+                      {index + 1}
+                    </th>
+                    <th
+                      scope="col"
+                      className="bg-primary text-center border col-sm-1"
+                    >
+                      {val.FirstName}
+                    </th>
+                    <th
+                      scope="col"
+                      className="bg-primary text-center border col-sm-1"
+                    >
+                      {val.LastName}
+                    </th>
+                    <th
+                      scope="col"
+                      className="bg-primary text-center border col-sm-1"
+                    >
+                      {val.password}
+                    </th>
+                    <th
+                      scope="col"
+                      className="bg-primary text-center border col-sm-1"
+                    >
+                      {val.Email}
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           );
         })}
       </div>
