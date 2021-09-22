@@ -53,12 +53,22 @@ function Admin() {
     return isValid;
   };
 
+  const resetForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setEmailErr("");
+    setPwdError("");
+  };
+
   const validate = () => {
     isValid = checkEmail(isValid);
     isValid = checkPassword(isValid);
 
     if (isValid) {
       submitNewUser();
+      resetForm();
     }
   };
 
@@ -83,6 +93,7 @@ function Admin() {
         <input
           type="text"
           name="FirstName"
+          value={firstName}
           onChange={(e) => {
             setFirstName(e.target.value);
           }}
@@ -91,6 +102,7 @@ function Admin() {
         <input
           type="text"
           name="LastName"
+          value={lastName}
           onChange={(e) => {
             setLastName(e.target.value);
           }}
