@@ -127,7 +127,7 @@ function Admin() {
                       scope="col"
                       className="table-light text-center col-sm-1"
                     >
-                      {val.password}
+                      {val.PW}
                     </td>
                     <td
                       scope="col"
