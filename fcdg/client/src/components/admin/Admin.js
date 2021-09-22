@@ -81,66 +81,66 @@ function Admin() {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col" className="bg-success col-sm-1">
+              <th scope="col" className="table-dark col-sm-1">
                 ID
               </th>
-              <th scope="col" className="bg-success col-sm-1">
+              <th scope="col" className="table-dark col-sm-1">
                 First Name
               </th>
-              <th scope="col" className="bg-success col-sm-1">
+              <th scope="col" className="table-dark col-sm-1">
                 Last Name
               </th>
-              <th scope="col" className="bg-success col-sm-1">
+              <th scope="col" className="table-dark col-sm-1">
                 Password
               </th>
-              <th scope="col" className="bg-success col-sm-1">
+              <th scope="col" className="table-dark col-sm-1">
                 Email
               </th>
             </tr>
           </thead>
         </table>
-        {DBusers.map((val, index) => {
-          return (
-            <div className="table">
-              <table className="table tableLayout">
+        <div className="table">
+          <table className="table tableLayout">
+            {DBusers.map((val, index) => {
+              return (
                 <tbody>
                   <tr>
-                    <th
+                    <td
                       scope="row"
-                      className="bg-primary text-center border col-sm-1"
+                      className="table-light text-center col-sm-1"
                     >
                       {index + 1}
-                    </th>
-                    <th
+                    </td>
+                    <td
                       scope="col"
-                      className="bg-primary text-center border col-sm-1"
+                      className="table-light text-center col-sm-1"
                     >
                       {val.FirstName}
-                    </th>
-                    <th
+                    </td>
+                    <td
                       scope="col"
-                      className="bg-primary text-center border col-sm-1"
+                      className="table-light text-center col-sm-1"
                     >
                       {val.LastName}
-                    </th>
-                    <th
+                    </td>
+                    <td
                       scope="col"
-                      className="bg-primary text-center border col-sm-1"
+                      className="table-light text-center col-sm-1"
                     >
                       {val.password}
-                    </th>
-                    <th
+                    </td>
+                    <td
                       scope="col"
-                      className="bg-primary text-center border col-sm-1"
+                      className="table-light text-center col-sm-1"
                     >
                       {val.Email}
-                    </th>
+                    </td>
                   </tr>
                 </tbody>
-              </table>
-            </div>
-          );
-        })}
+              );
+            })}
+          </table>
+        </div>
       </div>
     </div>
   );
