@@ -104,7 +104,7 @@ function Admin() {
             setEmail(e.target.value);
           }}
         />
-        <label>Password: </label>
+        <label>Password (Minimum 6 Characters): </label>
         <input
           type="text"
           name="Password"
