@@ -10,7 +10,7 @@ import Tiles from "./components/tiles/Tiles";
 import Home from "./components/home/Home";
 import Admin from "./components/admin/Admin";
 import Navigation from "./components/navbar/Navigation";
-
+import Mymodal from "./components/modal/Mymodal";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,8 +21,8 @@ ReactDOM.render(
           <Switch>
             <Route path="/" exact>
               <Home />
-              <Tiles/>
-              {/* <Tile title={"Title from index"} desc={"Description from index"} Img='https://i.kym-cdn.com/photos/images/newsfeed/000/804/850/999.gif'/> */}
+              <Tiles />
+              <Mymodal />
             </Route>
             <Route path="/admin">
               <Admin />
