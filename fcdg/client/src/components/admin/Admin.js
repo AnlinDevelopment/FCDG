@@ -12,6 +12,9 @@ function Admin() {
   const [DBusers, setDBusers] = useState([]);
   const [emailErr, setEmailErr] = useState(false);
   const [pwdError, setPwdError] = useState(false);
+  const [title, setTitle] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     Axios.get("http://localhost:3001/api/get/user").then((response) => {
@@ -88,48 +91,90 @@ function Admin() {
   return (
     <div id="Admin-Main" className="admin">
       <title>FCDG Administration</title>
-      <div className="form">
-        <label>First Name: </label>
-        <input
-          type="text"
-          name="FirstName"
-          value={firstName}
-          onChange={(e) => {
-            setFirstName(e.target.value);
-          }}
-        />
-        <label>Last Name: </label>
-        <input
-          type="text"
-          name="LastName"
-          value={lastName}
-          onChange={(e) => {
-            setLastName(e.target.value);
-          }}
-        />
-        <label>Email: </label>
-        <input
-          type="text"
-          name="Email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <label>Password (Minimum 6 Characters): </label>
-        <input
-          type="text"
-          name="Password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
+      <table>
+        <tr>
+          <th scope="col">
+            <div className="form">
+              <h1>Create User</h1>
+              <label>First Name: </label>
+              <input
+                type="text"
+                name="FirstName"
+                value={firstName}
+                onChange={(e) => {
+                  setFirstName(e.target.value);
+                }}
+              />
+              <label>Last Name: </label>
+              <input
+                type="text"
+                name="LastName"
+                value={lastName}
+                onChange={(e) => {
+                  setLastName(e.target.value);
+                }}
+              />
+              <label>Email: </label>
+              <input
+                type="text"
+                name="Email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <label>Password (Minimum 6 Characters): </label>
+              <input
+                type="text"
+                name="Password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
 
-        <button onClick={validate}>Submit</button>
-        {emailErr && <p>Your email is invalid</p>}
-        {pwdError && <p>Your password is invalid</p>}
-      </div>
+              <button onClick={validate}>Submit</button>
+              {emailErr && <p>Your email is invalid</p>}
+              {pwdError && <p>Your password is invalid</p>}
+            </div>
+          </th>
+          <th scope="col">
+            <div className="form">
+              <h1>Create Card</h1>
+              <label>Title: </label>
+              <input
+                type="text"
+                name="Title"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              />
+
+              <label>Photo: </label>
+              <input
+                type="img"
+                name="Photo"
+                value={photo}
+                onChange={(e) => {
+                  setPhoto(e.target.value);
+                }}
+              />
+
+              <label>Description: </label>
+              <input
+                type="text"
+                name="Description"
+                value={description}
+                onChange={(e) => {
+                  setDescription(e.target.value);
+                }}
+              />
+            </div>
+          </th>
+        </tr>
+      </table>
+
       <div className="right">
         ---List Of Users---
         <table className="table">

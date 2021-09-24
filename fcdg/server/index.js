@@ -38,27 +38,13 @@ app.get("/api/get/user", (req, res) => {
   });
 });
 
-app.get("/api/get/test", (req, res) => {
-  const sqlt = "SELECT * FROM fcdg.`security` LIMIT 10;";
+app.get("/api/get/cards", (req, res) => {
+  const sqlSelectCards = "SELECT * FROM fcdg.`card_info`;";
 
-  db.getConnection()
-    .then((conn) => {
-      console.log("connected ! connection id is " + conn.threadId);
-      res.send("loading");
-
-      db.query(sqlt, (err, result) => {
-        console.log("req", sqlt);
-        console.log("res", result);
-        res.send(result);
-      }).catch((err) => {
-        console.log("err: ", err);
-      });
-
-      conn.release(); //release to pool
-    })
-    .catch((err) => {
-      console.log("not connected due to error: " + err);
-    });
+  mydb.query(sqlSelectCards, (err, result) => {
+    console.log("Result: ", result);
+    res.send(result);
+  });
 });
 
 //Creates a url so that we can pass variables between the frontend and backend and write to the DB
