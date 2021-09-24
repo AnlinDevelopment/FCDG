@@ -18,11 +18,12 @@ export default function Tile(props) {
   return (
     <Card
       className="card"
-      onClick={() =>
-        clicked(`${props.title} || ${props.description} || ${props.img} `)
-      }
+      // onClick={() =>
+      //   clicked(`${props.title} || ${props.description} || ${props.img} `)
+      // }
     >
       <CardActionArea>
+        <Mymodal />
         <CardMedia component="img" height="150" image={props.img} />
         <CardContent>
           <Typography
