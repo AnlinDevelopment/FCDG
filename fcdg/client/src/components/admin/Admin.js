@@ -56,7 +56,7 @@ function Admin() {
     return isValid;
   };
 
-  const resetForm = () => {
+  const resetFormUser = () => {
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -65,13 +65,19 @@ function Admin() {
     setPwdError("");
   };
 
+  const resetFormCard = () => {
+    setTitle("");
+    setPhoto("");
+    setDescription("");
+  };
+
   const validate = () => {
     isValid = checkEmail(isValid);
     isValid = checkPassword(isValid);
 
     if (isValid) {
       submitNewUser();
-      resetForm();
+      resetFormUser();
     }
   };
 
@@ -86,6 +92,20 @@ function Admin() {
     }).then(() => {
       alert("Successful Insert");
     });
+  };
+
+  // function to create a new entry in the card_info table once the submit button has been clicked.
+  // These variables pass to server/index.js to the post cmd.
+  const submitNewCard = () => {
+    Axios.post("http://localhost:3001/api/insert/cards", {
+      BEtitle: title,
+      BEphoto: photo,
+      BEdescription: description,
+    }).then(() => {
+      alert("Successful Insert");
+    });
+
+    resetFormCard();
   };
 
   return (
@@ -170,6 +190,8 @@ function Admin() {
                   setDescription(e.target.value);
                 }}
               />
+
+              <button onClick={submitNewCard}>Submit</button>
             </div>
           </th>
         </tr>

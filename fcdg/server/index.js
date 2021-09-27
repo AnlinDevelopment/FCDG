@@ -47,6 +47,18 @@ app.get("/api/get/cards", (req, res) => {
   });
 });
 
+app.post("/api/insert/cards", (req, res) => {
+  const BEtitle = req.body.BEtitle;
+  const BEphoto = req.body.BEphoto;
+  const BEdescription = req.body.BEdescription;
+  const sqlInsertCard =
+    "INSERT INTO fcdg.`card_info` (title, photo, description) VALUES (?, ?, ?);";
+
+  db.query(sqlInsertCard, [BEtitle, BEphoto, BEdescription], (err, result) => {
+    console.log("Result: ", result);
+  });
+});
+
 //Creates a url so that we can pass variables between the frontend and backend and write to the DB
 app.post("/api/insert", (req, res) => {
   const BEfirstName = req.body.BEfirstName;
