@@ -4,26 +4,22 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
+// import Button from "@mui/material/Button";
 
 //stylesheet
 import "./Tile.css";
 
-import Mymodal from "../modal/Mymodal";
-
-function clicked(name) {
-  alert(`You clicked ${name}!`);
-}
+import Modal from "../modal/Modal";
 
 export default function Tile(props) {
   return (
     <Card
       className="card"
-      // onClick={() =>
-      //   clicked(`${props.title} || ${props.description} || ${props.img} `)
-      // }
+      onClick={() =>
+        clicked(`${props.title} || ${props.description} || ${props.img} `)
+      }
     >
       <CardActionArea>
-        <Mymodal />
         <CardMedia component="img" height="150" image={props.img} />
         <CardContent>
           <Typography
@@ -45,4 +41,8 @@ export default function Tile(props) {
       </CardActionArea>
     </Card>
   );
+}
+
+function clicked(name) {
+  alert(`You clicked ${name}!`);
 }

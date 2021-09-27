@@ -2,10 +2,14 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
+import Tile from "../tiles/Tile";
+
 //stylesheet
 import "./Modal.css";
 
-function MyVerticallyCenteredModal(props) {
+import img from "../../assets/img/etc/reptile.jpg";
+
+function Mymodal(props) {
   return (
     <Modal
       {...props}
@@ -14,33 +18,24 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton color>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Title Here{props.title}
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Title Here</Modal.Title>
       </Modal.Header>
+      <img src={img}></img>
       <Modal.Body>
-        <h1>image Here</h1>
+        <h>description goes here.</h>
       </Modal.Body>
-      <Modal.Footer>
-        <p>Description Here</p>
-      </Modal.Footer>
     </Modal>
   );
 }
 
-export default function Mymodal() {
+export default function Modal_toggle(props) {
   const [modalShow, setModalShow] = React.useState(false);
-
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
         Open Modal View
       </Button>
-
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+      <Mymodal show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 }
