@@ -56,6 +56,7 @@ app.post("/api/insert/cards", (req, res) => {
 
   db.query(sqlInsertCard, [BEtitle, BEphoto, BEdescription], (err, result) => {
     console.log("Result: ", result);
+    console.warn("error: ", err);
   });
 });
 
