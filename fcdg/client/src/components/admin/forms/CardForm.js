@@ -20,7 +20,7 @@ export default function CardForm() {
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
       console.warn("img data: ", e.target.result);
-      //   setPhoto(e.target.result);
+      // setPhoto(e.target.result);
     };
   }
 

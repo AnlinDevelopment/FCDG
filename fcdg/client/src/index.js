@@ -10,7 +10,7 @@ import Tiles from "./components/tiles/Tiles";
 import Home from "./components/home/Home";
 import Admin from "./components/admin/Admin";
 import Navigation from "./components/navbar/Navigation";
-import Modal from "./components/modal/Modal";
+import Footer from "./components/footer/Footer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,7 +22,7 @@ ReactDOM.render(
             <Route path="/" exact>
               <Home />
               <Tiles />
-              <Modal />
+              <Footer />
             </Route>
             <Route path="/admin">
               <Admin />

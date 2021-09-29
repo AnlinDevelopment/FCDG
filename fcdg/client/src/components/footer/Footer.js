@@ -1,10 +1,10 @@
 //stylesheet
-import "./Tile.css";
+import "./Footer.css";
 
 export default function Footer() {
   return (
     <>
-      <h>hello</h>
+      <h>hello from the Footer</h>
     </>
   );
 }
