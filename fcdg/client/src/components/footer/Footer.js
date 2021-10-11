@@ -1,10 +1,27 @@
+import React from "react";
+import { SocialIcon } from "react-social-icons";
+
 //stylesheet
 import "./Footer.css";
 
-export default function Footer() {
-  return (
-    <>
-      <h>hello from the Footer</h>
-    </>
-  );
-}
+const Footer = () => (
+  <div className="footer">
+    <h>Footer text</h>
+    <br />
+    <br />
+    <SocialIcon url="https://www.facebook.com" fgColor="white" />
+    <SocialIcon url="https://twitter.com" fgColor="white" />
+    <SocialIcon url="https://www.discord.com" fgColor="white" />
+    <SocialIcon url="https://www.instagram.com" fgColor="white" />
+    <SocialIcon url="https://www.snapchat.com" fgColor="white" />
+    <SocialIcon url="https://www.youtube.com" fgColor="white" />
+    <br />
+    <br />
+    <p className="p">
+      Copyright 2021. All content, trademarks, artwork, and associated imagery
+      are trademarks and/or copyright material of their respective owners. All
+      rights reserved.
+    </p>
+  </div>
+);
+export default Footer;

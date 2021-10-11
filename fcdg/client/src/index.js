@@ -6,10 +6,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./index.css";
 
 //components
-import Tiles from "./components/tiles/Tiles";
 import Home from "./components/home/Home";
 import Admin from "./components/admin/Admin";
 import Navigation from "./components/navbar/Navigation";
+import Head from "./components/head/Head";
+import Tiles from "./components/tiles/Tiles";
 import Footer from "./components/footer/Footer";
 
 ReactDOM.render(
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Router>
       <div className="App">
         <Navigation />
+        {/* <Head /> */}
         <div className="content">
           <Switch>
             <Route path="/" exact>
@@ -26,6 +28,7 @@ ReactDOM.render(
             </Route>
             <Route path="/admin">
               <Admin />
+              <Footer />
             </Route>
           </Switch>
         </div>
