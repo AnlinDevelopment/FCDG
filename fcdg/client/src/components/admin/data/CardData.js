@@ -7,28 +7,25 @@ export default function CardData() {
 
   useEffect(() => {
     Axios.get("http://localhost:3001/api/get/cards").then((response) => {
-      console.log("Front End Card Data: ", response.data);
+      // console.log("Front End Card Data: ", response.data);
       setDBcards(response.data);
     });
   });
 
   return (
     <div className="right">
-      ---List Of Users---
+      ---Card Data---
       <table className="table">
         <thead>
           <tr>
             <th scope="col" className="table-dark col-sm-1">
-              ID
-            </th>
-            <th scope="col" className="table-dark col-sm-1">
               Title
             </th>
             <th scope="col" className="table-dark col-sm-1">
-              Photo
+              Description
             </th>
             <th scope="col" className="table-dark col-sm-1">
-              Description
+              Photo
             </th>
           </tr>
         </thead>
@@ -39,17 +36,14 @@ export default function CardData() {
             return (
               <tbody>
                 <tr>
-                  <th scope="row" className="table-light text-center col-sm-1">
-                    {index + 1}
-                  </th>
                   <th scope="col" className="table-light text-center col-sm-1">
                     {val.title}
                   </th>
                   <th scope="col" className="table-light text-center col-sm-1">
-                    {val.photo.data}
+                    {val.description}
                   </th>
                   <th scope="col" className="table-light text-center col-sm-1">
-                    {val.description}
+                    {val.photo.data}
                   </th>
                 </tr>
               </tbody>

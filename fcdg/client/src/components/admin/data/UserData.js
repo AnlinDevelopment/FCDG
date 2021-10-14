@@ -8,7 +8,7 @@ export default function UserData() {
 
   useEffect(() => {
     Axios.get("http://localhost:3001/api/get/user").then((response) => {
-      console.log("Front End User Data: ", response.data);
+      // console.log("Front End User Data: ", response.data);
       setDBusers(response.data);
     });
   });

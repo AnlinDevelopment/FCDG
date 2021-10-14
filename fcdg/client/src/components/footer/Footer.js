@@ -21,6 +21,17 @@ const Footer = () => (
       Copyright 2021. All content, trademarks, artwork, and associated imagery
       are trademarks and/or copyright material of their respective owners. All
       rights reserved.
+      <br />
+      <p1 className="p1">
+        Website Created by:{" "}
+        <a className="p1" href="https://www.facebook.com/darien.st">
+          Darien Stefani
+        </a>{" "}
+        and{" "}
+        <a className="p1" href="https://google.com">
+          Tyler Gillette
+        </a>
+      </p1>
     </p>
   </div>
 );

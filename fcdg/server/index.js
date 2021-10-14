@@ -42,7 +42,7 @@ app.get("/api/get/cards", (req, res) => {
   const sqlSelectCards = "SELECT * FROM fcdg.`card_info`;";
 
   mydb.query(sqlSelectCards, (err, result) => {
-    console.log("Result: ", result);
+    // console.log("Result: ", result);
     res.send(result);
   });
 });
@@ -55,8 +55,8 @@ app.post("/api/insert/cards", (req, res) => {
     "INSERT INTO fcdg.`card_info` (title, photo, description) VALUES (?, ?, ?);";
 
   db.query(sqlInsertCard, [BEtitle, BEphoto, BEdescription], (err, result) => {
-    console.log("Result: ", result);
-    console.warn("error: ", err);
+    // console.log("Result: ", result);
+    // console.warn("error: ", err);
   });
 });
 
@@ -73,12 +73,12 @@ app.post("/api/insert", (req, res) => {
     sqlInsert,
     [BEfirstName, BElastName, BEemail, BEpassword],
     (err, result) => {
-      console.log("Results: ", result);
+      // console.log("Results: ", result);
     }
   );
 });
 
 //make sure the server is running.
 app.listen(3001, () => {
-  console.log("Running on port 3001");
+  // console.log("Running on port 3001");
 });

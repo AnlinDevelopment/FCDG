@@ -1,5 +1,10 @@
-import React from "react";
+// import React from "react";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 import Tile from "../../components/tiles/Tile";
+import Test from "../test/Test";
+
+import Fetch from "../test/Test";
 
 //stylesheet
 import Grid from "@material-ui/core/Grid";
@@ -13,56 +18,41 @@ import img2 from "../../assets/img/etc/I4.jpg";
 import img3 from "../../assets/img/etc/reptile.jpg";
 var img5 = "https://i.kym-cdn.com/photos/images/newsfeed/000/804/850/999.gif";
 
-class Tiles extends React.Component {
-  render() {
-    return (
-      <div>
-        <Grid
-          container
-          direction="row"
-          justifyContent="space-around"
-          alignItems="flex-start"
-        >
+const Tiles = (props) => {
+  const [DBcards, setDBcards] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/get/cards").then((response) => {
+      // console.log("Front End Card Data: ", response.data);
+      setDBcards(response.data);
+    });
+  });
+
+  //spoonfed array
+  // const db = [
+  //   { title: "Title 1", description: "Desc 1", img: "" },
+  //   { title: "Title 2", description: "Desc 2", img: "" },
+  //   { title: "Title 3", description: "Desc 3", img: "" },
+  // ];
+
+  return (
+    <div>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-around"
+        alignItems="flex-start"
+      >
+        {DBcards.map((item) => (
           <Tile
-            id="01"
-            img={img}
-            title="Tile 1 (edit me from Tiles.js)"
-            description="This is a test of discription on tile 1."
+            img={item.photo}
+            title={item.title}
+            description={item.description}
           />
-          <Tile
-            id="02"
-            img={img0}
-            title="Tile 2 (edit me from Tiles.js)"
-            description="This is a test of description on tile 2."
-          />
-          <Tile
-            id="03"
-            img={img1}
-            title="Tile 3 (edit me from Tiles.js)"
-            description="This is a test of description on tile 3."
-          />
-          <Tile
-            id="04"
-            img={img2}
-            title="Tile 4 (edit me from Tiles.js)"
-            description="This is a test of description on tile 4."
-          />
-          <Tile
-            id="05"
-            img={img3}
-            title="Tile 5 (edit me from Tiles.js)"
-            description="This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. "
-          />
-          <Tile
-            id="06"
-            img={img5}
-            title="Tile 6 (edit me from Tiles.js)"
-            description="This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. This is an example of paragraph text. "
-          />
-        </Grid>
-      </div>
-    );
-  }
-}
+        ))}
+      </Grid>
+    </div>
+  );
+};
 
 export default Tiles;
