@@ -34,7 +34,7 @@ app.get("/api/get/user", (req, res) => {
   const sqlSelect = "SELECT * FROM fcdg.`security`;";
 
   mydb.query(sqlSelect, (err, result) => {
-    res.send(result);
+    // res.send(result);
   });
 });
 

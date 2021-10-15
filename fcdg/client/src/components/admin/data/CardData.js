@@ -10,7 +10,7 @@ export default function CardData() {
       // console.log("Front End Card Data: ", response.data);
       setDBcards(response.data);
     });
-  });
+  }, []);
 
   return (
     <div className="right">

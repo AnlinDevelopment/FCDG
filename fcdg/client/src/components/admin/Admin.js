@@ -7,7 +7,7 @@ function Admin() {
   return (
     <div>
       <CardForm />
-      <CardData />;
+      <CardData />
     </div>
   );
 }
