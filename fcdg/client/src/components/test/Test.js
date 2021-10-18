@@ -1,40 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 
-class Fetch extends React.Component {
-  state = {
-    loading: true,
-    entry: null,
-  };
-
-  async componentDidMount() {
-    const url = "http://localhost:3001/api/get/cards/";
-    // const url = "https://api.randomuser.me/";
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({ entry: data, loading: false });
-  }
-
-  render() {
-    if (this.state.loading) {
-      return <div>loading...</div>;
-    }
-
-    if (!this.state.entry) {
-      return <div>No data recieved</div>;
-    }
-
-    console.log(this.state.entry);
-
-    return (
-      <div>
-        {/* <div>{this.state.entry[0].id}</div>
-        <div>{this.state.entry[0].title}</div>
-        <div>{this.state.entry[0].description}</div>
-        <div>{this.state.entry[0].photo.data}</div>
-        <img src={this.state.entry[0].photo.data} /> */}
-      </div>
-    );
-  }
+export default function CardData(props) {
+  const [DBcards, setDBcards] = useState([]);
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/get/cards").then((response) => {
+      // console.log("Front End Card Data: ", response.data);
+      setDBcards(response.data);
+      console.log(response.data);
+    });
+  }, []);
+  return <div />;
 }
-
-export default Fetch;

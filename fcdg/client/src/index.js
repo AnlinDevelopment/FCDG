@@ -13,6 +13,7 @@ import Head from "./components/head/Head";
 import Tiles from "./components/tiles/Tiles";
 import Footer from "./components/footer/Footer";
 // import Nav2 from "./components/navbar/Nav2";
+
 import Test from "./components/test/Test";
 
 ReactDOM.render(
@@ -26,8 +27,7 @@ ReactDOM.render(
           <Switch>
             <Route path="/" exact>
               <Home />
-              {/* <Tiles /> */}
-              <Test />
+              <Tiles />
               <Footer />
             </Route>
             <Route path="/admin">

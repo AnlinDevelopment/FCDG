@@ -18,7 +18,7 @@ function Navigation() {
         <GlobalStyles />
         <div>
           <Nav
-            class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+            className="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
             bg="dark"
             variant="dark"
             expand="lg"

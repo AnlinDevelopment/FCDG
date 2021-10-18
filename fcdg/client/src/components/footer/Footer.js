@@ -6,7 +6,7 @@ import "./Footer.css";
 
 const Footer = () => (
   <div className="footer">
-    <h>Footer text</h>
+    <a>Footer text</a>
     <br />
     <br />
     <SocialIcon url="https://www.facebook.com" fgColor="white" />
@@ -22,8 +22,8 @@ const Footer = () => (
       are trademarks and/or copyright material of their respective owners. All
       rights reserved.
       <br />
-      <p1 className="p1">
-        Website Created by:{" "}
+      <label className="p1">
+        Created by:{" "}
         <a className="p1" href="https://www.facebook.com/darien.st">
           Darien Stefani
         </a>{" "}
@@ -31,7 +31,7 @@ const Footer = () => (
         <a className="p1" href="https://google.com">
           Tyler Gillette
         </a>
-      </p1>
+      </label>
     </p>
   </div>
 );
