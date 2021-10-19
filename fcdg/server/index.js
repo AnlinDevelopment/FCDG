@@ -1,9 +1,13 @@
-const express = require("express");
-const app = express();
-const mariadb = require("mariadb");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const mysql = require("mysql");
+var express = require("express");
+var app = express();
+var mariadb = require("mariadb");
+var bodyParser = require("body-parser");
+var cors = require("cors");
+var mysql = require("mysql");
+
+//request limit 1gb
+app.use(json({ limit: 52428800 }));
+app.use(urlencoded({ limit: 52428800, extended: true }));
 
 //create the database connection to be used later to query the databse.
 const db = mariadb.createPool({

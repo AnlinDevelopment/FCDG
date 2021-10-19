@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "../Admin.css";
+import axios from "axios";
 
 export default function CardForm() {
   const [title, setTitle] = useState("");
-  const [photo, setPhoto] = useState();
+  const [photo, setPhoto] = useState("");
   const [description, setDescription] = useState("");
 
   const resetFormCard = () => {
     setTitle("");
-    setPhoto();
+    setPhoto("");
     setDescription("");
   };
 
@@ -19,8 +20,10 @@ export default function CardForm() {
 
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
-      console.warn("img data: ", e.target.result);
-      // setPhoto(e.target.result);
+      console.warn("img data: ", e.target.result.toString().trim());
+      let picInfo = e.target.result.toString().trim();
+      console.warn("Photo Info: ", picInfo);
+      setPhoto(e.target.result.toString().trim());
     };
   }
 
@@ -61,7 +64,9 @@ export default function CardForm() {
                 <input
                   type="file"
                   name="Photo"
-                  value={photo}
+                  value={undefined}
+                  accept="image/gif, image/jpeg, image/png"
+                  placeholder="Upload File..."
                   onChange={(e) => {
                     fileUpload(e);
                   }}
