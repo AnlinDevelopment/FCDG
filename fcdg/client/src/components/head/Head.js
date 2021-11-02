@@ -6,7 +6,7 @@ import "./Head.css";
 const Head = () => (
   <div className="head">
     <br />
-    <a>Test from Head</a>
+    <label>Test from Head</label>
   </div>
 );
 export default Head;

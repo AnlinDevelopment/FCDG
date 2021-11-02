@@ -19,6 +19,9 @@ export default function CardData() {
         <thead>
           <tr>
             <th scope="col" className="table-dark col-sm-1">
+              Delete
+            </th>
+            <th scope="col" className="table-dark col-sm-1">
               Title
             </th>
             <th scope="col" className="table-dark col-sm-1">
@@ -34,8 +37,18 @@ export default function CardData() {
         <table className="table tableLayout">
           {DBcards.map((val, index) => {
             return (
-              <tbody>
+              <tbody key={val.id}>
                 <tr>
+                  <th scope="col" className="table-light text-center col-sm-1">
+                    <button
+                      onClick={() =>
+                        alert(`syscall remove entry by id: ${val.id}`)
+                      }
+                      className="delbtn"
+                    >
+                      Delete
+                    </button>
+                  </th>
                   <th scope="col" className="table-light text-center col-sm-1">
                     {val.title}
                   </th>
@@ -43,7 +56,7 @@ export default function CardData() {
                     {val.description}
                   </th>
                   <th scope="col" className="table-light text-center col-sm-1">
-                    {val.photo.data}
+                    {val.photo}
                   </th>
                 </tr>
               </tbody>

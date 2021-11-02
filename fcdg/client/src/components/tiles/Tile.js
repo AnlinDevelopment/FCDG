@@ -39,11 +39,7 @@ export default function Tile(props) {
             >
               {props.title}
             </Typography>
-            <Typography
-              className="description"
-              variant="body2"
-              color="text.secondary"
-            >
+            <Typography className="description" variant="body2">
               {props.description}
             </Typography>
           </CardContent>

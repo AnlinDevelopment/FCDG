@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "../Admin.css";
-import axios from "axios";
 
 export default function CardForm() {
   const [title, setTitle] = useState("");
@@ -50,17 +49,22 @@ export default function CardForm() {
             <th scope="col">
               <div className="form">
                 <h1>Create Card</h1>
-                <label>Title: </label>
+                <label>
+                  Title:<label className="required">*</label>
+                </label>
                 <input
                   type="text"
                   name="Title"
+                  placeholder="Title"
                   value={title}
                   onChange={(e) => {
                     setTitle(e.target.value);
                   }}
                 />
 
-                <label>Photo: </label>
+                <label>
+                  Photo:<label className="required">*</label>
+                </label>
                 <input
                   type="file"
                   name="Photo"
@@ -72,10 +76,13 @@ export default function CardForm() {
                   }}
                 />
 
-                <label>Description: </label>
+                <label>
+                  Description:<label className="required">*</label>
+                </label>
                 <input
                   type="text"
                   name="Description"
+                  placeholder="Description"
                   value={description}
                   onChange={(e) => {
                     setDescription(e.target.value);

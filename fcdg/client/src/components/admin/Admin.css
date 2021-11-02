@@ -35,3 +35,10 @@
 .tableLayout {
   table-layout: fixed;
 }
+.delbtn {
+  color: white;
+  background-color: red;
+}
+.required {
+  color: rgb(230, 0, 0);
+}

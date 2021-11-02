@@ -6,8 +6,8 @@ var cors = require("cors");
 var mysql = require("mysql");
 
 //request limit 1gb
-app.use(json({ limit: 52428800 }));
-app.use(urlencoded({ limit: 52428800, extended: true }));
+app.use(express.json({ limit: 52428800 }));
+app.use(express.urlencoded({ limit: 52428800, extended: true }));
 
 //create the database connection to be used later to query the databse.
 const db = mariadb.createPool({
@@ -80,6 +80,20 @@ app.post("/api/insert", (req, res) => {
       // console.log("Results: ", result);
     }
   );
+});
+
+// delete single entries from frontend
+app.delete("api/delete/:id", (req, res) => {
+  let { ID } = req.params.id;
+  let sql = `DELETE FROM card_info WHERE ID = ${req.params.id}`;
+  console.log("id: ", req.params.id);
+
+  // delete a row with id = req.params.id
+  connection.query(sql, (error, results, fields) => {
+    if (error) return console.error(error.message);
+    res.status(200).send(results);
+    console.log("Deleted Row(s):", results.affectedRows);
+  });
 });
 
 //make sure the server is running.

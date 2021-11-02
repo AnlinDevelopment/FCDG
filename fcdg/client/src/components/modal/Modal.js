@@ -19,7 +19,7 @@ export default function Mymodal(props) {
       </Modal.Header>
       <img src={props.img} alt=""></img>
       <Modal.Body>
-        <a>{props.description}</a>
+        <label>{props.description}</label>
       </Modal.Body>
     </Modal>
   );
