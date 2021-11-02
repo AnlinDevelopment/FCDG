@@ -24,7 +24,6 @@ ReactDOM.render(
           <Switch>
             <Route path="/" exact>
               <Home />
-              <Head />
               <Tiles />
               <Footer />
             </Route>
