@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //stylesheet
 import "./index.css";
 
+//subsites
+import Home from "./pages/home/Home";
+import Admin from "./pages/admin/Admin";
+
 //components
-import Home from "./components/home/Home";
-import Admin from "./components/admin/Admin";
 import Navigation from "./components/navbar/Navigation";
-import Head from "./components/head/Head";
+// import Head from "./components/head/Head";
 import Tiles from "./components/tiles/Tiles";
 import Footer from "./components/footer/Footer";
 // import Nav2 from "./components/navbar/Nav2";

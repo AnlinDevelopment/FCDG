@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import "../Admin.css";
+import "../../pages/admin/Admin.css";
 
 export default function CardData() {
   const [DBcards, setDBcards] = useState([]);
@@ -14,7 +14,7 @@ export default function CardData() {
 
   return (
     <div className="right">
-      ---Card Data---
+      ---Card Database---
       <table className="table">
         <thead>
           <tr>
