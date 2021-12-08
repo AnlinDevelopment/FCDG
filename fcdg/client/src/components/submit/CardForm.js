@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import Axios from "axios";
 import "../../pages/admin/Admin.css";
 
-export default function CardForm() {
+export default function CardForm(props) {
   const [title, setTitle] = useState("");
   const [photo, setPhoto] = useState("");
   const [description, setDescription] = useState("");
-
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
   const resetFormCard = () => {
     setTitle("");
     setPhoto("");
     setDescription("");
+    setLatitude("");
+    setLongitude("");
   };
 
   function fileUpload(e) {
@@ -52,6 +55,7 @@ export default function CardForm() {
                 Submit
               </button>
             </th>
+            {/* Title entry field */}
             <th scope="col" className="table-dark col-sm-1">
               <label className="required">*</label>
               <input
@@ -64,6 +68,7 @@ export default function CardForm() {
                 }}
               />
             </th>
+            {/* Description entry field */}
             <th scope="col" className="table-dark col-sm-1">
               <label className="required">*</label>
               <input
@@ -77,6 +82,7 @@ export default function CardForm() {
                 }}
               />
             </th>
+            {/* Upload field */}
             <th scope="col" className="table-dark col-sm-1">
               <label className="p2">(7MB Maximum)</label>
               <label className="required">*</label>

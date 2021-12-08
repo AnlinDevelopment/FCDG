@@ -25,6 +25,7 @@ const mydb = mysql.createPool({
   password: "Anlin",
   database: "fcdg",
 });
+
 //allows us to read and write from the frontend to the backend
 app.use(cors());
 

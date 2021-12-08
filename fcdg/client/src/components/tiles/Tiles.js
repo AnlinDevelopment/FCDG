@@ -6,7 +6,7 @@ import Axios from "axios";
 //stylesheet
 import Grid from "@material-ui/core/Grid";
 
-const Tiles = (props) => {
+const Tiles = () => {
   const [DBcards, setDBcards] = useState([]);
   useEffect(() => {
     Axios.get("http://localhost:3001/api/get/cards").then((response) => {
@@ -23,14 +23,18 @@ const Tiles = (props) => {
         justifyContent="space-around"
         alignItems="flex-start"
       >
-        {DBcards.map((item) => (
-          <Tile
-            key={item.id}
-            img={item.photo}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
+        {DBcards.slice(0)
+          .reverse()
+          .map((props) => (
+            <Tile
+              key={props.id}
+              img={props.photo}
+              title={props.title}
+              description={props.description}
+              lat={props.latitude}
+              lon={props.longitude}
+            />
+          ))}
       </Grid>
     </div>
   );

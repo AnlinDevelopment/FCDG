@@ -21,11 +21,13 @@ export default function Tile(props) {
         title={props.title}
         img={props.img}
         description={props.description}
+        lat={props.lat}
+        lon={props.lon}
       />
       <Card
         className="card"
         onClick={() =>
-          popup(`${props.title} || ${props.description} || ${props.img} `)
+          popup(`${props.title} || ${props.description} || ${props.img}`)
         }
       >
         <CardActionArea>

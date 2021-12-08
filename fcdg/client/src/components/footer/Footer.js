@@ -9,7 +9,8 @@ const Footer = () => (
     {/* <label>Footer text</label> */}
     <br />
     <br />
-    {/*Socials*/}
+
+    {/* Socials */}
     <SocialIcon
       url="https://www.facebook.com"
       fgColor="white"
@@ -31,9 +32,9 @@ const Footer = () => (
     <br />
     <br />
     <p className="p">
-      Copyright 2021. All content, trademarks, artwork, and associated imagery
-      are trademarks and/or copyright material of their respective owners. All
-      rights reserved.
+      Copyright {new Date().getFullYear()}. All content, trademarks, artwork,
+      and associated imagery are trademarks and/or copyright material of their
+      respective owners. All rights reserved.
       <br />
       {/* Credit */}
       <label className="p1">

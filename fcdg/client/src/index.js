@@ -17,7 +17,7 @@ import Footer from "./components/footer/Footer";
 // import Nav2 from "./components/navbar/Nav2";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode className="page">
     <Router>
       <div className="App">
         <Navigation />

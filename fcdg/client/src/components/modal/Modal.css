@@ -1,7 +1,24 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 10px;
+  padding-top: 300px;
+}
 .modal-header {
   color: black;
 }
 .modal-body {
+  padding: 0px;
   color: rgb(126, 126, 126);
   text-align: center;
+  margin: 35px;
+}
+.image {
+  margin: 10px;
+}
+.title {
+  margin-left: 5px;
 }
