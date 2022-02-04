@@ -56,13 +56,19 @@ app.post("/api/insert/cards", (req, res) => {
   const BEtitle = req.body.BEtitle;
   const BEphoto = req.body.BEphoto;
   const BEdescription = req.body.BEdescription;
+  const BElatitude = req.body.BElatitude;
+  const BElongitude = req.body.BElongitude;
   const sqlInsertCard =
-    "INSERT INTO fcdg.`card_info` (title, photo, description) VALUES (?, ?, ?);";
+    "INSERT INTO fcdg.`card_info` (title, photo, description, latitude, longitude) VALUES (?, ?, ?, ?, ?);";
 
-  db.query(sqlInsertCard, [BEtitle, BEphoto, BEdescription], (err, result) => {
-    // console.log("Result: ", result);
-    // console.warn("error: ", err);
-  });
+  db.query(
+    sqlInsertCard,
+    [BEtitle, BEphoto, BEdescription, BElatitude, BElongitude],
+    (err, result) => {
+      // console.log("Result: ", result);
+      // console.warn("error: ", err);
+    }
+  );
 });
 
 //Creates a url so that we can pass variables between the frontend and backend and write to the DB

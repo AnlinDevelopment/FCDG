@@ -36,6 +36,8 @@ export default function CardForm(props) {
       BEtitle: title,
       BEphoto: photo,
       BEdescription: description,
+      BElatitude: latitude,
+      BElongitude: longitude,
     }).then(() => {
       alert("Successful Insert");
     });
@@ -95,6 +97,32 @@ export default function CardForm(props) {
                 required
                 onChange={(e) => {
                   fileUpload(e);
+                }}
+              />
+            </th>
+            {/* Latitude entry field */}
+            <th scope="col" className="table-dark col-sm-1">
+              <label className="required">*</label>
+              <input
+                type="number"
+                name="latitude"
+                placeholder="latitude"
+                value={latitude}
+                onChange={(e) => {
+                  setLatitude(e.target.value);
+                }}
+              />
+            </th>
+            {/* Longitude entry field */}
+            <th scope="col" className="table-dark col-sm-1">
+              <label className="required">*</label>
+              <input
+                type="number"
+                name="longitude"
+                placeholder="longitude"
+                value={longitude}
+                onChange={(e) => {
+                  setLongitude(e.target.value);
                 }}
               />
             </th>
